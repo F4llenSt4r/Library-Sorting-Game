@@ -1,0 +1,176 @@
+body {
+    background-color: #e7d5a9; /* สีพื้นหลังนอกชั้นหนังสือ */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* หน้าเมนูหลัก */
+#main-menu {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: #e7d5a9; /* สีพื้นหลังเมนู */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 50;
+}
+
+.game-title {
+    margin-bottom: 40px;
+    image-rendering: pixelated;
+}
+
+/* ปุ่มกดในหน้าเมนู */
+.menu-btn {
+    padding: 15px 30px;
+    margin: 10px;
+    cursor: pointer;
+    image-rendering: pixelated;
+    transition: transform 0.1s;
+}
+
+.menu-btn:hover {
+    transform: scale(1.1);
+}
+
+/* หน้าต่าง Popup สอนเล่น */
+#instruction-popup {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+#instruction-content {
+    width: 512px;
+    height: 512px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* หน้าต่างคะแนน */
+#scoreboard {
+    position: absolute;
+    top: 20px;
+    color: white;
+    font-size: 24px;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px #000;
+    z-index: 10;
+}
+
+/* หน้าต่างเกมหลัก */
+#game-container {
+    width: 640px;
+    height: 360px;
+    background-image: url('Prop/Bookshelf.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    image-rendering: pixelated;
+    position: relative;
+    transform: scale(1.5);
+}
+
+/* ช่องของชั้นวางแต่ละชั้น */
+.shelf-row {
+    display: flex;
+    position: absolute;
+    width: 608px; /* ความกว้างของชั้นวาง */
+    height: 64px; /* ความสูงของหนังสือ */
+    left: 16px; /* ขยับให้ตรงกับขอบชั้นไม้ */
+}
+
+/* กะระยะจากขอบบนลงมาหาชั้นวางแต่ละชั้น */
+#shelf-1 { top: 32px; }
+#shelf-2 { top: 128px; }
+#shelf-3 { top: 209px; }
+
+.split-shelf {
+    display: flex;
+    justify-content: space-between;
+}
+
+.shelf-zone {
+    display: flex;
+    width: 288px;
+    height: 100%;
+}
+
+/* ขนาดของหนังสือ */
+.book {
+    width: 32px;
+    height: 64px;
+    background-size: cover;
+    image-rendering: pixelated;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+/* กองหนังสือ */
+#book-basket {
+    top: 320px; /* ปรับให้กองหนังสืออยู่ใต้ชั้นไม้ */
+    left: 30px;
+    width: 580px;
+    display: flex;
+    justify-content: center; /* จัดให้กองหนังสืออยู่ตรงกลาง */
+    flex-wrap: wrap; /* ถ้าล้นให้ปัดขึ้นบรรทัดใหม่ได้ */
+}
+
+.book:hover {
+    transform: translateY(-5px);
+}
+.book.selected {
+    transform: translateY(-10px);
+    outline: 2px solid #fffb90; /* กรอบสีบอกว่ากำลังเลือกเล่มนี้ */
+}
+
+/* หน้าต่างจบเกม */
+#game-clear-popup {
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100; /* ให้อยู่หน้าสุดทับทุกอย่าง */
+}
+
+.popup-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.win-image {
+    width: 350px;
+    image-rendering: pixelated;
+    margin-bottom: 15px;
+    filter: drop-shadow(0px 4px 0px rgba(0,0,0,0.5));
+}
+
+/* สรุปคะแนน */
+.final-stats {
+    color: #FFD700;
+    font-size: 24px;
+    font-family: sans-serif;
+    font-weight: bold;
+    margin-bottom: 25px;
+    text-shadow: 2px 2px 4px #000;
+}
+
+#back-to-menu-btn:hover {
+    transform: scale(1.1);
+}

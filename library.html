@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library - Sorting Game</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <!-- หน้าเมนูหลัก -->
+    <div id="main-menu">
+        <img src="CSS/Prop/Library Sorting.png" class="game-title">
+        <img src="CSS/Prop/Start.png" id="start-btn" class="menu-btn">
+        <img src="CSS/Prop/How to Play.png" id="instruction-btn" class="menu-btn">
+    </div>
+
+    <!-- หน้าต่าง Instruction Popup -->
+    <div id="instruction-popup" style="display: none;">
+            <img src="CSS/Prop/Inscrution.png" id="instruction-content">
+            <img src="CSS/Prop/Understand.png" id="close-instruction-btn" class="menu-btn">
+    </div>
+
+    <!-- หน้าต่างคะแนน -->
+    <div id="scoreboard" style="display: none;">
+        <span>⭐ คะแนน: <span id="score-display">0</span></span> | 
+        <span>🔄 สลับไปแล้ว: <span id="moves-display">0</span> ครั้ง</span> | 
+        <span>⏱️ เวลา: <span id="time-display">0</span> วินาที</span>
+    </div>
+
+    <!-- รูปชั้นหนังสือ -->
+    <div id="game-container" style="display: none;">
+        <!-- ชั้นที่ 1 และ 2 สำหรับ Bubble Sort -->
+        <div id="shelf-1" class="shelf-row"></div>
+        <div id="shelf-2" class="shelf-row"></div>
+        
+        <!-- ชั้นที่ 3 แบ่งซ้ายขวา สำหรับ Insertion Sort -->
+        <div id="shelf-3" class="shelf-row split-shelf">
+            <div id="insert-left" class="shelf-zone"></div>
+            <div id="insert-right" class="shelf-zone"></div>
+        </div>
+        
+        <!-- เพิ่มกองหนังสือไว้ด้านล่างสุดของจอ -->
+        <div id="book-basket" class="shelf-row"></div>
+    </div>
+
+    <!-- หน้าต่างจบเกม -->
+    <div id="game-clear-popup" style="display: none;">
+        <div class="popup-content">
+            <!-- ดึงรูป You win.png ของคุณมาแสดง -->
+            <img src="CSS/Prop/You win.png" alt="You Win" class="win-image">
+            
+            <div class="final-stats">
+                <p>คะแนนรวม: <span id="final-score">0</span></p>
+                <p>เวลาที่ใช้: <span id="final-time">0</span> วินาที</p>
+            </div>
+
+            <!-- ปุ่ม Back to Menu -->
+            <img src="CSS/Prop/Back.png" alt="Back to Menu" id="back-to-menu-btn">
+        </div>
+    </div>
+
+    <script src="Script/script.js"></script>
+</body>
+</html>
